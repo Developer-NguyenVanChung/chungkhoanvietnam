@@ -15,13 +15,11 @@
         text-align: center;
     }
     nav{
-
         ul.topnav{
             @include list-style;
             @include flex;
             margin-top: 12px;
             li{
-
                 a{
                     display: block;
                     padding: 6px 12px;
@@ -36,5 +34,52 @@
             }
 
         }
+    }
+}
+
+#container{
+    border: 1px solid #ccc;
+    width: 1200px;
+    max-width: 100%;
+    margin: 10px auto 10px;
+    display: flex;
+    .sideRight{
+        flex-basis: 15%;
+
+        .sideRight-list{
+            @include list-style;
+            background-color: #333;
+            li{
+                a{
+                    display: block;
+                    text-decoration: none;
+                    padding: 6px 12px;
+                    color: $white-color;
+
+                }
+            }
+        }
+      
+    }
+
+    .content{
+        flex-basis: 85%;
+        padding: 6px 10px 10px 20px;
+        &__item{
+            margin-bottom: 12px;
+        }
+    }
+
+}
+
+#footer{
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    background-color: $bg-dark;
+    h3{
+        color: $white-color;
+        padding: 8px 0px;
+        text-align: center;
     }
 }

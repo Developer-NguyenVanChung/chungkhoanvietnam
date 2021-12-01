@@ -1,0 +1,8 @@
+@mixin list-style {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+@mixin flex{
+    display: flex;
+}

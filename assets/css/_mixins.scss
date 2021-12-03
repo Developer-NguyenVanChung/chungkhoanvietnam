@@ -1,8 +1,10 @@
-@mixin list-style {
+@mixin lists-style {
+    list-style-type: none;
     padding: 0;
     margin: 0;
-    list-style-type: none;
 }
-@mixin flex{
+@mixin flex {
     display: flex;
+    // flex-wrap: wrap;
+    align-items: center;
 }

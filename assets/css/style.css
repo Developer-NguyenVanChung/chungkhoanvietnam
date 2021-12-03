@@ -1,10 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .app {
   width: 1200px;
   max-width: 100%;
   margin: 0 auto;
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: inherit;
+}
 .header__main {
+  width: inherit;
   display: flex;
   background-color: #333;
   align-items: center;
@@ -35,7 +48,9 @@
   margin-right: 12px;
   margin-left: auto;
 }
-.header__main-account button {
+.header__main-account a {
+  text-decoration: none;
+  display: inline-block;
   padding: 6px 12px;
   font-weight: 600;
   background-color: blue;
@@ -53,14 +68,18 @@
   }
   .header__main-account {
     position: absolute;
-    top: 48px;
+    top: 12px;
     right: 12px;
+    display: none;
   }
 }
 
 .container {
   display: flex;
   align-items: center;
+  position: relative;
+  margin-top: 130px;
+  margin-bottom: 20px;
 }
 .container__content {
   flex-basis: 80%;
@@ -72,6 +91,14 @@
   padding: 12px 0px;
   flex-basis: 20%;
   border: 1px solid #bbb;
+  background-color: red;
+}
+.container__side nav {
+  position: fixed;
+  border: 1px solid #bbb;
+  top: 130px;
+  right: 150px;
+  width: 230px;
 }
 .container__side nav a {
   text-align: center;
@@ -96,9 +123,42 @@
   }
 }
 
+section.posts article {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 12px;
+}
+section.posts article:not(section.posts article:first-child) {
+  padding-top: 15px;
+  margin-top: 15px;
+}
+section.posts article a {
+  text-decoration: none;
+  color: #333;
+}
+section.posts article h3 {
+  padding-bottom: 12px;
+}
+section.posts article .content {
+  display: flex;
+}
+section.posts article .content-img {
+  display: block;
+  width: 170px;
+  height: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+section.posts article .content-img img {
+  width: 100%;
+  height: 100%;
+}
+section.posts article p {
+  padding-left: 10px;
+  font-size: 18px;
+}
+
 footer {
   margin-top: 20px;
-  background-color: #000;
+  background-color: #333;
   text-transform: uppercase;
 }
 footer h3 {
@@ -113,15 +173,48 @@ footer nav {
 footer nav a {
   text-decoration: none;
   font-weight: 700;
-  display: block;
+  display: inline-block;
   padding: 8px 16px;
   color: #fff;
 }
-@media screen and (max-width: 740px) {
-  footer nav a {
-    display: inline-block;
-    padding: 4px 8px;
-  }
+
+.header-account {
+  text-align: center;
+  border-bottom: 1px solid #bbb;
+  margin-bottom: 24px;
+}
+.header-account h3 {
+  color: red;
+  font-weight: 700;
+}
+.header-account strong {
+  font-style: italic;
 }
 
-/*# sourceMappingURL=style2.css.map */
+main.form-account form {
+  width: fit-content;
+  border: 1px solid #bbb;
+  padding: 12px 24px;
+  margin: 8px auto;
+}
+main.form-account form label {
+  color: blue;
+}
+main.form-account form input {
+  display: block;
+  margin-bottom: 12px;
+  padding: 4px 8px;
+}
+main.form-account form input[type=submit] {
+  margin: 8px auto;
+  color: blue;
+  border: none;
+  background-color: yellow;
+  font-weight: 700;
+  cursor: pointer;
+}
+main.form-account p {
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,5 +1,10 @@
 @import "./variables";
-@import "./mixin";
+@import "./mixins";
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 .app {
     width: 1200px;
     max-width: 100%;
@@ -7,23 +12,28 @@
 }
 
 // HEADER
-.header{
-    &__main{
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    // width: 100%;
+    width: inherit;
+    &__main {
+        // left: 0;
+        width: inherit;
         display: flex;
         background-color: #333;
         align-items: center;
-        // justify-content: space-between;
-      
-        &-logo{
+        &-logo {
             width: 80px;
             margin: 8px;
-            img{
+            img {
                 width: 100%;
             }
         }
-        &-list{
+        &-list {
             padding: 8px 0px;
-            a{  
+            a {
                 border-right: $border;
                 display: inline-block;
                 text-decoration: none;
@@ -31,16 +41,18 @@
                 padding: 0px 16px;
                 font-size: 20px;
 
-                &:hover{
+                &:hover {
                     color: #333;
                     background-color: #fff;
                 }
             }
         }
-        &-account{
+        &-account {
             margin-right: 12px;
             margin-left: auto;
-            button{
+            a {
+                text-decoration: none;
+                display: inline-block;
                 padding: 6px 12px;
                 font-weight: 600;
                 background-color: blue;
@@ -49,16 +61,17 @@
                 cursor: pointer;
             }
         }
-        @media screen and (max-width:740px){
+        @media screen and (max-width: 740px) {
             padding-bottom: 18px;
             flex-wrap: wrap;
-            &-logo{
+            &-logo {
                 width: 30px;
             }
-            &-account{
+            &-account {
                 position: absolute;
-                top: 48px;
+                top: 12px;
                 right: 12px;
+                display: none;
             }
             // display: none;
         }
@@ -66,20 +79,30 @@
 }
 
 // CONTAINER
-.container{
+.container {
     @include flex;
-    &__content{
+    position: relative;
+    margin-top: 130px;
+    margin-bottom: 20px;
+    &__content {
         flex-basis: 80%;
         border: $border;
         padding: 12px;
         margin-right: 12px;
     }
-    &__side{
+    &__side {
         padding: 12px 0px;
         flex-basis: 20%;
         border: $border;
-        nav{
-            a{
+        background-color: red;
+
+        nav {
+            position: fixed;
+            border: $border;
+            top: 130px;
+            right: 150px;
+            width: 230px;
+            a {
                 text-align: center;
                 text-decoration: none;
                 display: block;
@@ -88,46 +111,118 @@
             }
         }
     }
-    @media screen and (max-width:740px) {
+    @media screen and (max-width: 740px) {
         flex-direction: column-reverse;
-        &__content{
+        &__content {
             margin-right: 0;
         }
-        &__side{
+        &__side {
             width: 100%;
             margin-bottom: 12px;
-            nav{
-                a{
+            nav {
+                a {
                     display: inline-block;
                 }
             }
         }
     }
 }
+section.posts {
+    article {
+        &:not(&:first-child){
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        border-bottom: $border;
+        padding-bottom: 12px;
+        a {
+            text-decoration: none;
+            color: $black-color;
+        }
+        h3{
+            padding-bottom: 12px;
+        }
+        .content {
+            display: flex;
+            &-img {
+                display: block;
+                width: 170px;
+                height: 100px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.3);
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        p {
+            padding-left: 10px;
+            font-size: 18px;
+        }
+    }
+}
 
 // FOOTER
-footer{
+footer {
     margin-top: 20px;
     background-color: #333;
     text-transform: uppercase;
-    position: fixed;
-    bottom: 0;
-    width: inherit;
-    h3{
+    h3 {
         text-align: center;
         color: $white-color;
         padding-top: 12px;
     }
-    nav{
+    nav {
         text-align: center;
         padding-bottom: 24px;
-        a{
+        a {
             text-decoration: none;
             font-weight: 700;
             display: inline-block;
             padding: 8px 16px;
             color: $white-color;
-       
         }
+    }
+}
+
+// TRANG REGISTER
+
+.header-account {
+    text-align: center;
+    border-bottom: $border;
+    margin-bottom: 24px;
+    h3 {
+        color: red;
+        font-weight: 700;
+    }
+    strong {
+        font-style: italic;
+    }
+}
+main.form-account {
+    form {
+        width: fit-content;
+        border: $border;
+        padding: 12px 24px;
+        margin: 8px auto;
+        label {
+            color: blue;
+        }
+        input {
+            display: block;
+            margin-bottom: 12px;
+            padding: 4px 8px;
+            &[type="submit"] {
+                margin: 8px auto;
+                color: blue;
+                border: none;
+                background-color: yellow;
+                font-weight: 700;
+                cursor: pointer;
+            }
+        }
+    }
+    p {
+        text-align: center;
     }
 }

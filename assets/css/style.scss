@@ -96,6 +96,7 @@
         border: $border;
 
         nav {
+            background-color:snow ;
             position: fixed;
             top: 130px;
             right: 0px;
@@ -183,6 +184,19 @@ section.posts {
             padding-left: 10px;
             font-size: 18px;
         }
+    }
+}
+
+// IFRAME
+article.iframe{
+    // display: flex;
+    width: 100%;
+    // flex-direction: row;
+    .zingmp3,.vnexpress{
+        margin-bottom: 24px;
+        height: 400px;
+        border: $border;
+        border-radius: 10px;
     }
 }
 

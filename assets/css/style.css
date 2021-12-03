@@ -143,6 +143,9 @@
 .container__side section.more p {
   padding: 4px 0px;
 }
+.container__side section.more p strong {
+  color: red;
+}
 
 section.posts article {
   border-bottom: 1px solid #bbb;

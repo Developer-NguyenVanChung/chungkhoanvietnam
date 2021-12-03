@@ -91,7 +91,6 @@
   padding: 12px 0px;
   flex-basis: 20%;
   border: 1px solid #bbb;
-  background-color: red;
 }
 .container__side nav {
   position: fixed;
@@ -110,6 +109,7 @@
 @media screen and (max-width: 740px) {
   .container {
     flex-direction: column-reverse;
+    margin-top: 80px;
   }
   .container__content {
     margin-right: 0;
@@ -118,9 +118,30 @@
     width: 100%;
     margin-bottom: 12px;
   }
+  .container__side nav {
+    position: unset;
+    width: 100%;
+  }
   .container__side nav a {
     display: inline-block;
   }
+}
+@media (min-width: 740px) and (max-width: 1023px) {
+  .container__side nav {
+    width: 153px;
+    right: 0;
+  }
+}
+
+.container__side section.more {
+  padding-left: 8px;
+}
+.container__side section.more h3 {
+  color: blue;
+  border-bottom: 1px solid #bbb;
+}
+.container__side section.more p {
+  padding: 4px 0px;
 }
 
 section.posts article {

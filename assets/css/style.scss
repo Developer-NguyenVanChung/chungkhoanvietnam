@@ -94,7 +94,6 @@
         padding: 12px 0px;
         flex-basis: 20%;
         border: $border;
-        background-color: red;
 
         nav {
             position: fixed;
@@ -113,6 +112,7 @@
     }
     @media screen and (max-width: 740px) {
         flex-direction: column-reverse;
+        margin-top: 80px;
         &__content {
             margin-right: 0;
         }
@@ -120,10 +120,32 @@
             width: 100%;
             margin-bottom: 12px;
             nav {
+                position:unset;
+                width: 100%;
                 a {
                     display: inline-block;
                 }
             }
+        }
+    }
+    @media (min-width:740px) and (max-width:1023px) {
+        &__side{
+            nav{
+                width: 153px;
+                right: 0;
+            }
+        }
+    }
+}
+.container__side{
+    section.more{
+        padding-left: 8px;
+        h3{
+            color: blue;
+            border-bottom: $border;
+        }
+        p{
+            padding: 4px 0px;
         }
     }
 }

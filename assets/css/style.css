@@ -94,9 +94,8 @@
 }
 .container__side nav {
   position: fixed;
-  border: 1px solid #bbb;
   top: 130px;
-  right: 150px;
+  right: 0px;
   width: 230px;
 }
 .container__side nav a {

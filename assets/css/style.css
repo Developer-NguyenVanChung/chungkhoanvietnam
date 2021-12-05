@@ -181,11 +181,9 @@ section.posts article p {
 }
 
 article.iframe {
-  display: flex;
-  flex-direction: column;
   width: 100%;
 }
-article.iframe .zingmp3, article.iframe .vnexpress {
+article.iframe .zingmp3, article.iframe .vnexpress, article.iframe iframe {
   margin-bottom: 24px;
   height: 400px;
   border: 1px solid #bbb;
@@ -212,6 +210,87 @@ footer nav a {
   display: inline-block;
   padding: 8px 16px;
   color: #fff;
+}
+
+section.table_info_member {
+  margin-bottom: 24px;
+}
+section.table_info_member table {
+  margin-bottom: 21px;
+}
+section.table_info_member table caption {
+  color: blue;
+  font-weight: 600;
+  font-size: 17px;
+}
+section.table_info_member table, section.table_info_member tr, section.table_info_member th {
+  border-collapse: collapse;
+}
+section.table_info_member td, section.table_info_member th {
+  padding: 8px;
+}
+
+section.form_info form {
+  border: 1px solid #bbb;
+  width: fit-content;
+  padding: 16px 32px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+section.form_info form h3 {
+  color: blue;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #bbb;
+}
+section.form_info form label {
+  display: block;
+  color: blue;
+  margin-bottom: 4px;
+}
+section.form_info form label[for=male], section.form_info form label[for=female], section.form_info form label[for=other] {
+  display: inline;
+}
+section.form_info form input {
+  display: block;
+  margin-bottom: 12px;
+}
+section.form_info form input:not(section.form_info form input[type=radio], section.form_info form input[type=color]) {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #bbb;
+  padding: 4px 8px;
+}
+section.form_info form input[name=gender] {
+  display: inline;
+}
+section.form_info form input[type=submit] {
+  display: block;
+  width: fit-content !important;
+  margin: 0 auto;
+  outline: none;
+  padding: 8px 16px !important;
+  border: none;
+  color: #fff;
+  background-color: blue;
+  margin-top: 12px;
+  cursor: pointer;
+}
+section.form_info form input[type=file] {
+  cursor: pointer;
+}
+section.form_info form input:focus {
+  outline: 1px solid blue !important;
+}
+section.form_info form select {
+  margin-bottom: 12px;
+}
+
+section.back {
+  text-align: right;
+}
+section.back a img {
+  width: 200px;
+  height: auto;
 }
 
 .header-account {

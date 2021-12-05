@@ -192,7 +192,7 @@ article.iframe{
     // display: flex;
     width: 100%;
     // flex-direction: row;
-    .zingmp3,.vnexpress{
+    .zingmp3,.vnexpress,iframe{
         margin-bottom: 24px;
         height: 400px;
         border: $border;
@@ -222,7 +222,92 @@ footer {
         }
     }
 }
+section.table_info_member{
+    table{
+        margin-bottom: 21px;
+        caption{
+            color: blue;
+            font-weight: 600;
+            font-size: 17px;
+        }
+    }
+    table,tr,th{
+        border-collapse: collapse;
+    }
+    td,th{
+        padding: 8px;
+    }
+    margin-bottom: 24px;
+}
 
+// SECTION FORM INFO
+section.form_info{
+    form{
+        border: $border;
+        width: fit-content;
+        padding: 16px 32px;
+        margin: 0 auto;
+        border-radius: 5px;
+        h3{
+            color: blue;
+            margin-bottom: 8px;
+            border-bottom: $border;
+        }
+        label{
+            display: block;
+            color: blue;
+            margin-bottom: 4px;
+            &[for="male"],&[for="female"],&[for="other"]{
+                display: inline;
+            }
+        }
+        input{
+            display: block;
+            margin-bottom: 12px;
+
+            &:not(&[type="radio"],&[type="color"]){
+                width: 100%;
+                border-radius: 3px;
+                border:$border;
+                padding: 4px 8px;
+            }
+            &[name="gender"]{
+                display: inline;
+            }
+            &[type="submit"]{
+                display: block;
+                width: fit-content !important;
+                margin: 0 auto;
+                outline: none;
+                padding: 8px 16px !important;
+                border: none;
+                color: #fff;
+                background-color: blue;
+                margin-top: 12px;
+                cursor: pointer;
+                // display: none;
+            }
+            &[type="file"]{
+                cursor: pointer;
+            }
+            &:focus{
+               outline: 1px solid blue !important;
+            }
+        }
+        select{
+            margin-bottom: 12px;
+        }
+    }
+}
+section.back{
+    text-align: right;
+    a{
+        img{
+            width: 200px;
+            height: auto;
+        }
+    }
+}
 // TRANG REGISTER
 
 .header-account {
@@ -264,3 +349,4 @@ main.form-account {
         text-align: center;
     }
 }
+
